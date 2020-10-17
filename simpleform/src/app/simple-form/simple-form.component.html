@@ -1,0 +1,14 @@
+<p>simple-form</p>
+<form #calcForm="ngForm">
+  <input [(ngModel)]="text1" name="fieldOne" required #fieldOne="ngModel">
+  +
+  <input [(ngModel)]="text2" name="fieldTwo" required #fieldTwo="ngModel">
+  <button (click)="addAndShow()" [disabled]="calcForm.invalid">計算</button>
+  <div>{{ result }}</div>
+  <div>
+    <span *ngIf="fieldOne.invalid">左入力必須</span>
+  </div>
+  <div>
+    <span *ngIf="fieldTwo.invalid">右入力必須</span>
+  </div>
+</form>
